@@ -8,7 +8,6 @@ export default class App extends Component {
     this.state = {files: []}
   }
   onDrop = (files) => {
-    console.log(files)
     let newFiles = files.map(file => {
       const file_obj = {
         percent:0,
@@ -19,9 +18,9 @@ export default class App extends Component {
 
     this.setState({files:this.state.files.concat(newFiles)})
   }
+
   render() {
     const files = this.state.files;
-    console.log(files)
     const filesInProgress = files.map(content =>  content.percent < 100 ? content : "")
     return (
       <div className="container-fluid">
