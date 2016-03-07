@@ -19,6 +19,25 @@ export default class App extends Component {
     this.setState({files:this.state.files.concat(newFiles)})
   }
 
+  updatePercentage = (index,percent) => {
+    let files =  this.state.files;
+    files[index].percent = percent;
+    this.setState({files:files})
+  }
+
+  uploadFile = (file,index) => {
+    
+  }
+
+  componentDidUpdate(prevProps,prevState){
+    const files =  this.state.files;
+    for(let i = 0; i < files.length; i++){
+      if(files[i].percent < 100){
+        this.uploadFile(files[i].file,i)
+        break;
+      }
+    }
+  }
   render() {
     const files = this.state.files;
     const filesInProgress = files.map(content =>  content.percent < 100 ? content : "")
@@ -30,11 +49,11 @@ export default class App extends Component {
                      <header> Files in Progress</header>
                            <ul className="list-unstyled">
                             {
-                              filesInProgress.map(content => {
-                                return <li> <FileItem file_name={content.file.name}
-                                                      file_size={content.file.size}
-                                                      file_ext={content.file.type}
-                                                      percent={content.percent}/></li>
+                              filesInProgress.map((content,index) => {
+                                return <li key={index}> <FileItem file_name={content.file.name}
+                                                                  file_size={content.file.size}
+                                                                  file_ext={content.file.type}
+                                                                  percent={content.percent}/></li>
                               })
                             }
                            </ul>
