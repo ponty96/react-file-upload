@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import DropZone from 'react-dropzone'
+import FileItem from './fileItem.js'
 require('./index.scss')
 export default class App extends Component {
 
@@ -15,15 +16,7 @@ export default class App extends Component {
                      <header> Files in Progress</header>
                            <ul>
                          <li>
-                         <div>
-                         </div>
-                     <div>
-                         <span>File Name</span>
-                         <span>File Size</span>
-                     </div>
-                     <div>
-                     <span></span>
-                     </div>
+        <FileItem />
                          </li>
                            </ul>
                    </div>
