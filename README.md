@@ -1,7 +1,7 @@
 React-File-Upload
 =====================
 
-A simple project that shows the use of Reactjs + Cloudinary.
+A simple project that shows the use of Reactjs to upload multiple images to Nodejs.
 
 ### Usage
 
