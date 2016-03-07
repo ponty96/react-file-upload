@@ -36,8 +36,12 @@ font-size: 20px;
     display: inline-block;
   }
 
-  & .status {
+  & .status.pending{
       color: #ec7705;
+  }
+
+  & .status.done {
+    color: green;
   }
 
 }

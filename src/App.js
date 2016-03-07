@@ -82,6 +82,16 @@ export default class App extends Component {
                                      percent={content.percent}/></li>
         }
     })
+
+    const filesUploaded = files.map((content,index) => {
+        if(content.percent == 100){
+          return <li key={index}> <FileItem file_name={content.file.name}
+                                     file_size={content.file.size}
+                                     file_ext={content.file.type}
+                                     percent={content.percent}/></li>
+        }
+    })
+
     return (
       <div className="container-fluid">
          <div className="row">
@@ -104,6 +114,13 @@ export default class App extends Component {
                </div>
                <div className="col-md-4">
                   <header> Files Uploaded</header>
+                  <ul className="list-unstyled">
+                   {
+                     filesUploaded.map(content => {
+                       return content
+                     })
+                   }
+                  </ul>
                </div>
          </div>
       </div>

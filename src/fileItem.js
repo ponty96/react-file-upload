@@ -11,7 +11,8 @@ export default class FileItem extends Component {
     const style = {
       width:percent
     }
-    //Math.floor(Math.random() * 100) + 10 
+    const statusClass = percent < 100 ? "status pending" : "status done"
+    //Math.floor(Math.random() * 100) + 10
     return (
       <div className="fileitem">
         <div>
@@ -22,7 +23,7 @@ export default class FileItem extends Component {
             </div>
             <div className="title">
               <span className="myLabel">File Ext:</span><span>{file_ext}</span>
-              <span className="myLabel">Status:</span><span className="status">upload pending</span>
+              <span className="myLabel">Status:</span><span className={statusClass}>{percent < 100 ? "upload pending" : "uploaded"}</span>
             </div>
             <div>
               <span className="progress" style={style}>
