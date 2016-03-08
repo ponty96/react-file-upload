@@ -9,7 +9,7 @@ export default class FileItem extends Component {
     const file_ext = this.props.file_ext;
     const percent = this.props.percent;
     const style = {
-      width:percent
+      width:percent+"%"
     }
     const statusClass = percent < 100 ? "status pending" : "status done"
     //Math.floor(Math.random() * 100) + 10
