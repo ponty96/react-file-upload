@@ -11,8 +11,9 @@ npm start
 open http://localhost:3000
 ```
 
-Now edit `src/App.js`.  
-Your changes will appear without reloading the browser like in [this video](http://vimeo.com/100010922).
+### Preview
+
+![Image Preview](https://www.dropbox.com/s/gi0d2zzf1xo453b/React-File-Upload.gif?dl=0)
 
 ### Linting
 
